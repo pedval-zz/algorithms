@@ -1,4 +1,4 @@
-package com.pedrovalencia.algorithms.coinchange;
+package coinchange;
 
 /**
  * Created by pedrovalencia on 28/03/15.

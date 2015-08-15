@@ -1,4 +1,4 @@
-package com.pedrovalencia.algorithms.coinchange;
+package coinchange;
 
 import java.util.HashMap;
 import java.util.TreeSet;

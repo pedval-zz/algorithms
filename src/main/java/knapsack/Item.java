@@ -1,4 +1,4 @@
-package com.pedrovalencia.algorithms.knapsack;
+package knapsack;
 
 
 /**

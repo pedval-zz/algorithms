@@ -1,4 +1,4 @@
-package com.pedrovalencia.algorithms.knapsack;
+package knapsack;
 
 import java.util.ArrayList;
 import java.util.List;

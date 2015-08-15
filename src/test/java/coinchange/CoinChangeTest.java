@@ -1,4 +1,4 @@
-package com.pedrovalencia.algorithms.coinchange;
+package coinchange;
 
 import org.junit.Assert;
 import org.junit.Before;
