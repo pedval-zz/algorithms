@@ -28,6 +28,8 @@ public class Algorithms {
         //exercise10();
         //exercise11();
         //exercise12();
+        caesar_cipher();
+
     }
 
     private void exercise1() {
@@ -118,7 +120,7 @@ public class Algorithms {
 
     private void exercise6() {
         List<Integer> numbers = Arrays.asList(4, 5, 6, 4, 7, 6, 7, 2);
-        HashMap<Integer, Boolean> number_repeated = new HashMap<>();
+        HashMap<Integer, Boolean> number_repeated = new HashMap<Integer, Boolean>();
         for(Integer number: numbers) {
             if(number_repeated.containsKey(number)) {
                 number_repeated.put(number, true);
@@ -344,5 +346,41 @@ public class Algorithms {
         return binomial.intValue();
 
 
+    }
+
+    private void caesar_cipher() {
+        Scanner in = new Scanner(System.in);
+        int length= in.nextInt();
+        in.nextLine();
+        String input = in.nextLine();
+        int diff = in.nextInt();
+        char[] input_array = input.toCharArray();
+
+        for(int i = 0; i < length; i++) {
+            transform(input_array,i, diff);
+        }
+        System.out.println(String.valueOf(input_array));
+
+    }
+
+    private void transform(char[] input_array, int index, int changes) {
+        //System.out.println("char: "+input+" ascii: "+(int)input);
+        char input = input_array[index];
+        if(changes > 0) {
+            if ((int) input == 90) {
+                //Z -> A
+                input_array[index] = 'A';
+                transform(input_array, index, changes-1);
+            } else if((int)input == 122) {
+                //z -> a
+                input_array[index] = 'a';
+                transform(input_array, index, changes-1);
+            } else if (((int) input >= 65 &&  (int) input <= 90) ||
+                    ((int) input >= 97 &&  (int) input <= 122)) {
+                input_array[index] = (char)((int)input+1);
+
+                transform(input_array, index, changes-1);
+            }
+        }
     }
 }
